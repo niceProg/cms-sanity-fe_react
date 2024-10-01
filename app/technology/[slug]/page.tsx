@@ -34,6 +34,10 @@ export default async function TechnologyPageSlug({ params }: { params: { slug: s
                h5: ({ children }: PortableTextComponentProps<any>) => <h5 className="text-lg font-medium mb-3">{children}</h5>,
                h6: ({ children }: PortableTextComponentProps<any>) => <h6 className="text-base font-normal mb-4">{children}</h6>,
           },
+          list: {
+               bullet: ({ children }: PortableTextComponentProps<any>) => <ul className="list-disc ml-5 mb-4">{children}</ul>,
+               number: ({ children }: PortableTextComponentProps<any>) => <ol className="list-decimal ml-5 mb-4">{children}</ol>,
+          },
      };
 
      const createdAt = data?._createdAt

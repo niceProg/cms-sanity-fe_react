@@ -2,12 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { LNavbar } from "./Logo";
-import { Fira_Code } from "next/font/google";
-import { Poppins } from "next/font/google";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-
-const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 
 type MenuItem = {
      title: string;
@@ -40,8 +35,8 @@ const Navbar: React.FC = () => {
                          <div className="md:flex items-center justify-between bg-[#F7F9FC] py-4 md:px-10 px-7">
                               {/* Logo */}
                               <div>
-                                   <Link href="/" className={`cursor-pointer ${firacode6.className}`}>
-                                        <span className="font-bold text-blue-500 text-2xl uppercase">
+                                   <Link href="/" className={`cursor-pointer `}>
+                                        <span className="font-bold tracking-widest text-gray-700 hover:text-blue-500 text-2xl uppercase">
                                              Yumna
                                              <LNavbar></LNavbar>
                                         </span>
@@ -62,9 +57,9 @@ const Navbar: React.FC = () => {
                                              <Link
                                                   href={item.route || ""}
                                                   key={"link-${index}"}
-                                                  className={`md:ml-8 md:my-0 my-7 font-extrabold text-xl uppercase 
+                                                  className={`md:ml-8 md:my-0 my-7 font-bold tracking-wider text-xl uppercase 
                                                        hover:text-blue-500 transition ease-in-out delay-150
-                                                       hover:-translate-y-1 hover:scale-300 duration-100 flex items-center cursor-pointer ${poppins.className}`}
+                                                       hover:-translate-y-1 hover:scale-300 duration-100 flex items-center cursor-pointer`}
                                              >
                                                   {item.title}
                                              </Link>

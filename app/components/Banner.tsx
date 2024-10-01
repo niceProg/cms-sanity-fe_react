@@ -2,9 +2,7 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import { Fira_Code } from "next/font/google";
-
-const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
+import { LBanner, LNavbar } from "./Logo";
 
 const Banner = () => {
      const [text] = useTypewriter({
@@ -36,9 +34,9 @@ const Banner = () => {
                          >
                               <h1
                                    className={`text-3xl md:text-5xl font-semibold
-                          mt-10 uppercase ${firacode6.className}`}
+                          mt-10 uppercase tracking-widest`}
                               >
-                                   yumna - tegaldev
+                                   yumna<LBanner></LBanner>
                               </h1>
                               <p className="text-xl md:text-3xl font-semibold mt-2">
                                    {text}

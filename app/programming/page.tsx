@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Poppins } from "next/font/google";
 import { getData } from "../lib/fetchcategory"; // Import getData dari fetchapi.ts
 import { Programming } from "../lib/interface";
-
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
-const poppins2 = Poppins({ subsets: ["latin"], weight: ["600"] });
 
 export const revalidate = 0;
 
@@ -45,31 +41,21 @@ export default async function ProgrammingPage() {
                                    <Link href={`/programming/${programming.slug.current}`}>
                                         <div>
                                              <div>{programming.mainImage && <Image src={programming.mainImage} alt={programming.title} width={750} height={300} className="object-cover rounded-lg border border-gray-200"></Image>}</div>
-                                             <h2 className={`font-bold text-2xl hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>{programming.title}</h2>
+                                             <h2 className={`font-bold text-lg hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>
+                                                  <span className="text-base font-bold">
+                                                       {new Date(programming._createdAt).toLocaleDateString("id-ID", {
+                                                            day: "2-digit",
+                                                            month: "long", // Nama bulan (contoh: Januari, Februari, dll.)
+                                                            year: "numeric",
+                                                            timeZone: "Asia/Jakarta", // Mengatur zona waktu ke WIB
+                                                       })}
+                                                  </span>
+                                                  <br />
+                                                  {programming.title}
+                                             </h2>
                                         </div>
-                                        <p className={`line-clamp-3 mt-2 ${poppins.className}`}>{programming.overview}</p>
+                                        <p className={`line-clamp-3 mt-2 text-sm`}>{programming.overview}</p>
                                    </Link>
-                                   <div className={`${poppins.className}`}>
-                                        Tanggal Terbit
-                                        <span className={`${poppins2.className}`}>
-                                             :{" "}
-                                             {new Date(programming._createdAt)
-                                                  .toLocaleDateString("id-ID", {
-                                                       day: "2-digit",
-                                                       month: "2-digit", // Angka bulan dengan dua digit (contoh: 01, 02, dst.)
-                                                       year: "numeric",
-                                                       timeZone: "Asia/Jakarta", // Zona waktu WIB
-                                                  })
-                                                  .replace(/\//g, "-")}
-                                             ,{" "}
-                                             {new Date(programming._createdAt).toLocaleTimeString("id-ID", {
-                                                  hour: "2-digit",
-                                                  minute: "2-digit",
-                                                  timeZone: "Asia/Jakarta", // Zona waktu WIB
-                                                  hour12: false, // Format 24 jam
-                                             })}
-                                        </span>
-                                   </div>
                               </article>
                          </div>
                     ))}
