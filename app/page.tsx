@@ -1,101 +1,88 @@
 import Image from "next/image";
+import Banner from "./components/Banner";
+import { Programming, Technology } from "./lib/interface";
+import Link from "next/link";
+import { getRecentPosts } from "./lib/fetchmain";
+import { Fira_Code, Poppins } from "next/font/google";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
+// const firacode4 = Fira_Code({ subsets: ["latin"], weight: ["400"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+const poppins2 = Poppins({ subsets: ["latin"], weight: ["600"] });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+export const revalidate = 60;
+
+export default async function Home() {
+     const programmingData = (await getRecentPosts("programming")) as unknown as Programming[];
+     const technologyData = (await getRecentPosts("technology")) as unknown as Technology[];
+
+     return (
+          <div>
+               <div>
+                    <Banner></Banner>
+               </div>
+               <div>
+                    <h1
+                         className={`font-extrabold capitalize text-3xl md:text-3xl lg:text-5xl
+                    text-center text-black ${firacode6.className} my-12`}
+                    >
+                         Postingan Pemrograman Terbaru
+                    </h1>
+               </div>
+               <div className="grid grid-2 bg-transparent lg:grid-cols-4 gap-8 px-8 py-3">
+                    {programmingData.map((programming) => (
+                         <div
+                              key={programming._id}
+                              className="bg-gray-100 p-3 rounded-lg shadow-xl
+                    hover:scale-105 duration-300"
+                         >
+                              <article>
+                                   <Link href={`/programming/${programming.slug.current}`}>
+                                        <div>
+                                             <div>{programming.mainImage && <Image src={programming.mainImage} alt={programming.title} width={750} height={300} className="object-cover rounded-lg border border-gray-200"></Image>}</div>
+                                             <h2 className={`font-bold text-2xl hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>{programming.title}</h2>
+                                        </div>
+                                        <p className={`line-clamp-3 mt-2 ${poppins.className}`}>{programming.overview}</p>
+                                   </Link>
+                                   <div className={`${poppins.className}`}>
+                                        Tanggal Rilis
+                                        <span className={`${poppins2.className}`}>: {new Date(programming._createdAt).toISOString().split("T")[0]}</span>
+                                   </div>
+                              </article>
+                         </div>
+                    ))}
+               </div>
+               <div>
+                    <h1
+                         className={`font-extrabold capitalize text-3xl md:text-3xl lg:text-5xl
+                    text-center text-black ${firacode6.className} my-14`}
+                    >
+                         Postingan Teknologi Terbaru
+                    </h1>
+               </div>
+               <div className="grid grid-2 bg-transparent lg:grid-cols-4 gap-8 px-8 py-3">
+                    {technologyData.map((technology) => (
+                         <div
+                              key={technology._id}
+                              className="bg-gray-100 p-3 rounded-lg shadow-xl
+                    hover:scale-105 duration-300"
+                         >
+                              <article>
+                                   <Link href={`/technology/${technology.slug.current}`}>
+                                        <div>
+                                             <div>{technology.mainImage && <Image src={technology.mainImage} alt={technology.title} width={750} height={300} className="object-cover rounded-lg border border-gray-200"></Image>}</div>
+                                             <h2 className={`font-bold text-2xl hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>{technology.title}</h2>
+                                        </div>
+                                        <p className={`line-clamp-3 mt-2 ${poppins.className}`}>{technology.overview}</p>
+                                   </Link>
+                                   <div className={`${poppins.className}`}>
+                                        Date Publised
+                                        <span className={`${poppins2.className}`}>: {new Date(technology._createdAt).toISOString().split("T")[0]}</span>
+                                   </div>
+                              </article>
+                         </div>
+                    ))}
+               </div>
+          </div>
+     );
 }
