@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Frontend Sanity Blogging Content Studio
 
-## Getting Started
+Ini adalah proyek [Next.js](https://nextjs.org) yang di-bootstrapped dengan [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-First, run the development server:
+## 📚 Memulai
+
+Pertama, jalankan server pengembangan:
 
 ```bash
 npm run dev
-# or
+# atau
 yarn dev
-# or
+# atau
 pnpm dev
-# or
+# atau
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000 di browser Anda untuk melihat hasilnya.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Anda dapat mulai mengedit halaman dengan memodifikasi app/page.tsx. Halaman akan diperbarui secara otomatis saat Anda mengedit file tersebut.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Proyek ini menggunakan next/font untuk secara otomatis mengoptimalkan dan memuat Geist, sebuah keluarga font baru dari Vercel.
 
-## Learn More
+### 🌟 Fitur Utama
+Render Sisi Server (SSR): Memanfaatkan kekuatan SSR untuk performa dan SEO yang lebih baik.
+Optimasi Font Otomatis: Menggunakan next/font untuk mengoptimalkan pemuatan font.
+Pengembangan Cepat: Hot-reloading memungkinkan Anda melihat perubahan secara real-time.
+Integrasi dengan Sanity: Terhubung dengan Sanity Content Studio untuk pengelolaan konten yang mudah.
+### 📖 Pelajari Lebih Lanjut
+Untuk mempelajari lebih lanjut tentang Next.js, lihat sumber daya berikut:
 
-To learn more about Next.js, take a look at the following resources:
+Dokumentasi Next.js - Pelajari tentang fitur dan API Next.js.
+Belajar Next.js - Tutorial interaktif Next.js.
+Anda juga dapat melihat repositori GitHub Next.js - masukan dan kontribusi Anda sangat kami hargai!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ☁️ Deploy di Vercel
+Cara termudah untuk mendeploy aplikasi Next.js Anda adalah menggunakan Platform Vercel dari pembuat Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Lihat dokumentasi deployment Next.js kami untuk detail lebih lanjut.
