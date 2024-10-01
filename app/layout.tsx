@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 const firacode4 = Fira_Code({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
-     title: "CMS My Blog",
-     description: "Blog CMS Descript",
+     title: "Yumna Dev Blog",
+     description: "Explore insightful articles and tutorials on web development, technology, and coding tips ",
 };
 
 export default function RootLayout({
