@@ -26,8 +26,16 @@ export async function getRecentPosts(postType: PostType) {
 
           console.log(`Sanity API Response for ${postType}:`, data);
           return data;
-     } catch (error: any) {
-          console.error(`Error fetching ${postType} data:`, error);
-          throw new Error(`Failed to fetch ${postType} data: ${error.message}`);
+     } catch (error: unknown) {
+          // Ganti any dengan unknown
+          // Pengecekan tipe sebelum mengakses properti error
+          if (error instanceof Error) {
+               console.error(`Error fetching ${postType} data:`, error);
+               throw new Error(`Failed to fetch ${postType} data: ${error.message}`);
+          } else {
+               // Penanganan jika error bukan instance dari Error
+               console.error("An unknown error occurred:", error);
+               throw new Error("An unknown error occurred during data fetching.");
+          }
      }
 }

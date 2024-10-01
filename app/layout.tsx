@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
-import { Fira_Code } from "next/font/google"
-import { Poppins } from "next/font/google"
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "./components/Navbar";

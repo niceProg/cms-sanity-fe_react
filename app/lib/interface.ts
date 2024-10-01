@@ -1,7 +1,19 @@
+// Tipe untuk konten blok (jika konten terdiri dari blok teks atau objek lain)
+type ContentBlock = {
+     type: string;
+     children: { text: string }[];
+};
+
+// Tipe untuk dimensi (contoh sederhana)
+interface Dimensions {
+     width: number;
+     height: number;
+}
+
 export interface Programming {
      title: string;
      overview: string;
-     content: any;
+     content: ContentBlock[]; // Ganti any dengan array blok konten
      _id: string;
      slug: {
           current: string;
@@ -12,10 +24,10 @@ export interface Programming {
 }
 
 export interface Technology {
-     dimensions: any;
+     dimensions: Dimensions; // Ganti any dengan objek Dimensions
      title: string;
      overview: string;
-     content: any;
+     content: ContentBlock[]; // Ganti any dengan array blok konten
      _id: string;
      slug: {
           current: string;

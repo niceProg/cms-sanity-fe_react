@@ -21,8 +21,16 @@ export async function getDataBySlug<T>(type: string, slug: string): Promise<T | 
 
           console.log(`Sanity API Response for ${type} with slug ${slug}:`, data);
           return data || null; // Jika data tidak ditemukan, kembalikan null
-     } catch (error: any) {
-          console.error(`Error fetching ${type} data with slug ${slug}:`, error);
-          throw new Error(`Failed to fetch ${type} data with slug ${slug}: ${error.message}`);
+     } catch (error: unknown) {
+          // Gunakan unknown alih-alih any
+          // Lakukan pengecekan tipe sebelum mengakses properti error
+          if (error instanceof Error) {
+               console.error(`Error fetching ${type} data with slug ${slug}:`, error);
+               throw new Error(`Failed to fetch ${type} data with slug ${slug}: ${error.message}`);
+          } else {
+               // Handle error yang bukan instance Error
+               console.error("An unknown error occurred:", error);
+               throw new Error("An unknown error occurred during data fetching.");
+          }
      }
 }
