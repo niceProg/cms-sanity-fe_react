@@ -9,7 +9,7 @@ export const LNavbar = () => {
 };
 export const LBanner = () => {
      return (
-          <Box className="size-52 inline-flex align-middle -mt-2 ml-2">
+          <Box className="md:size-52 size-32 inline-flex align-middle -mt-2 ml-2">
                <Image src="/assets/logo/Tegal.dev-BBB-removebg.png" alt="Yumna Logo" boxSize="100%" objectFit="contain" />
           </Box>
      );
