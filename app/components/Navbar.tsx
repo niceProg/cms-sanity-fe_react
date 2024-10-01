@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
                               ease-in ${isOpen ? "top-18" : "top-[-490px]"}
                               `}
                               >
-                                   {menuItems.map((item, index) => {
+                                   {menuItems.map((item) => {
                                         return (
                                              <Link
                                                   href={item.route || ""}

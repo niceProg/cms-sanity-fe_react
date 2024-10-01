@@ -7,9 +7,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
 const firacode4 = Fira_Code({ subsets: ["latin"], weight: ["400"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
      title: "CMS My Blog",
