@@ -22,19 +22,19 @@ Anda dapat mulai mengedit halaman dengan memodifikasi app/page.tsx. Halaman akan
 
 Proyek ini menggunakan next/font untuk secara otomatis mengoptimalkan dan memuat Geist, sebuah keluarga font baru dari Vercel.
 
-### 🌟 Fitur Utama
+## 🌟 Fitur Utama
 Render Sisi Server (SSR): Memanfaatkan kekuatan SSR untuk performa dan SEO yang lebih baik.
 Optimasi Font Otomatis: Menggunakan next/font untuk mengoptimalkan pemuatan font.
 Pengembangan Cepat: Hot-reloading memungkinkan Anda melihat perubahan secara real-time.
 Integrasi dengan Sanity: Terhubung dengan Sanity Content Studio untuk pengelolaan konten yang mudah.
-### 📖 Pelajari Lebih Lanjut
+## 📖 Pelajari Lebih Lanjut
 Untuk mempelajari lebih lanjut tentang Next.js, lihat sumber daya berikut:
 
 Dokumentasi Next.js - Pelajari tentang fitur dan API Next.js.
 Belajar Next.js - Tutorial interaktif Next.js.
 Anda juga dapat melihat repositori GitHub Next.js - masukan dan kontribusi Anda sangat kami hargai!
 
-### ☁️ Deploy di Vercel
+## ☁️ Deploy di Vercel
 Cara termudah untuk mendeploy aplikasi Next.js Anda adalah menggunakan Platform Vercel dari pembuat Next.js.
 
 Lihat dokumentasi deployment Next.js kami untuk detail lebih lanjut.
