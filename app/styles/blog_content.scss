@@ -1,0 +1,13 @@
+.text-content {
+     @media (max-width: 768px) {
+          padding: 1.5rem;
+     }
+}
+.main-image {
+     @media (max-width: 768px) {
+          border: none;
+          border-radius: 0%;
+          width: 100%; // Default: Full width for mobile
+          height: auto; // Maintain aspect ratio
+     }
+}

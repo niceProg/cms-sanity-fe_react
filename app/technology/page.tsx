@@ -14,9 +14,9 @@ export default async function TechnologyPage() {
      const data = await getData<Technology>("technology");
 
      return (
-          <div>
+          <div className="bg-[#F7F9FC]">
                <div className="w-full bg-datacenter_banner bg-center h-96 bg-no-repeat bg-cover">
-                    <div className="w-full h-96 bg-black opacity-70 z-[-1] text-gray-700">
+                    <div className="w-full h-96 bg-[#F7F9FC] opacity-70 z-[-1] text-gray-700">
                          <div className="h-96 max-w-screen-2xl mx-auto flex flex-col justify-center items-center text-4xl md:text-5xl font-extrabold text-center">Teknologi</div>
                     </div>
                </div>
@@ -43,8 +43,25 @@ export default async function TechnologyPage() {
                                         <p className={`line-clamp-3 mt-2 ${poppins.className}`}>{technology.overview}</p>
                                    </Link>
                                    <div className={`${poppins.className}`}>
-                                        Date Publised
-                                        <span className={`${poppins2.className}`}>: {new Date(technology._createdAt).toISOString().split("T")[0]}</span>
+                                        Tanggal Terbit
+                                        <span className={`${poppins2.className}`}>
+                                             :{" "}
+                                             {new Date(technology._createdAt)
+                                                  .toLocaleDateString("id-ID", {
+                                                       day: "2-digit",
+                                                       month: "2-digit", // Angka bulan dengan dua digit (contoh: 01, 02, dst.)
+                                                       year: "numeric",
+                                                       timeZone: "Asia/Jakarta", // Zona waktu WIB
+                                                  })
+                                                  .replace(/\//g, "-")}
+                                             ,{" "}
+                                             {new Date(technology._createdAt).toLocaleTimeString("id-ID", {
+                                                  hour: "2-digit",
+                                                  minute: "2-digit",
+                                                  timeZone: "Asia/Jakarta", // Zona waktu WIB
+                                                  hour12: false, // Format 24 jam
+                                             })}
+                                        </span>
                                    </div>
                               </article>
                          </div>

@@ -15,8 +15,8 @@ const Banner = () => {
           delaySpeed: 1000,
      });
      return (
-          <div className="w-full bg-write_banner bg-center h-80 bg-no-repeat bg-cover">
-               <div className="w-full h-80 bg-black opacity-70 z-[-1] text-gray-700">
+          <div className="w-full bg-write_banner bg-center h-96 bg-no-repeat bg-cover">
+               <div className="w-full h-96 bg-[#F7F9FC] opacity-70 z-[-1] text-gray-700">
                     <div
                          className="h-80 max-w-screen-2xl mx-auto flex flex-col
                     justify-center items-center text-4xl md:text-5xl font-extrabold text-center"

@@ -4,12 +4,13 @@ import Link from "next/link";
 import { LFooter } from "./Logo";
 import Copyright from "./Copyright";
 import { Fira_Code } from "next/font/google";
+import "../styles/footer.scss";
 
 const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
 
 const Footer = () => {
      return (
-          <div>
+          <div className="footer bg-[#F7F9FC]">
                <div className="pt-16 px4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen md:px-24 lg:px-8">
                     <div className="grid gap-10 mb-8 sm:grid-cols-2 lg:grid-cols-4 font-semibold">
                          <div className="sm:col-span-2">

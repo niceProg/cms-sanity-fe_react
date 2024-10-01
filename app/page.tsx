@@ -10,14 +10,14 @@ const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 const poppins2 = Poppins({ subsets: ["latin"], weight: ["600"] });
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export default async function Home() {
      const programmingData = (await getRecentPosts("programming")) as unknown as Programming[];
      const technologyData = (await getRecentPosts("technology")) as unknown as Technology[];
 
      return (
-          <div>
+          <div className="bg-[#F7F9FC]">
                <div>
                     <Banner></Banner>
                </div>
@@ -70,14 +70,31 @@ export default async function Home() {
                               <article>
                                    <Link href={`/technology/${technology.slug.current}`}>
                                         <div>
-                                             <div>{technology.mainImage && <Image src={technology.mainImage} alt={technology.title} width={750} height={300} className="object-cover rounded-lg border border-gray-200"></Image>}</div>
+                                             <div>{technology.mainImage && <Image src={technology.mainImage} alt={technology.title} width={750} height={300} className="object-cover rounded-xl border border-gray-200"></Image>}</div>
                                              <h2 className={`font-bold text-2xl hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>{technology.title}</h2>
                                         </div>
                                         <p className={`line-clamp-3 mt-2 ${poppins.className}`}>{technology.overview}</p>
                                    </Link>
                                    <div className={`${poppins.className}`}>
-                                        Date Publised
-                                        <span className={`${poppins2.className}`}>: {new Date(technology._createdAt).toISOString().split("T")[0]}</span>
+                                        Tanggal Terbit
+                                        <span className={`${poppins2.className}`}>
+                                             :{" "}
+                                             {new Date(technology._createdAt)
+                                                  .toLocaleDateString("id-ID", {
+                                                       day: "2-digit",
+                                                       month: "2-digit", // Angka bulan dengan dua digit (contoh: 01, 02, dst.)
+                                                       year: "numeric",
+                                                       timeZone: "Asia/Jakarta", // Zona waktu WIB
+                                                  })
+                                                  .replace(/\//g, "-")}
+                                             ,{" "}
+                                             {new Date(technology._createdAt).toLocaleTimeString("id-ID", {
+                                                  hour: "2-digit",
+                                                  minute: "2-digit",
+                                                  timeZone: "Asia/Jakarta", // Zona waktu WIB
+                                                  hour12: false, // Format 24 jam
+                                             })}
+                                        </span>
                                    </div>
                               </article>
                          </div>
