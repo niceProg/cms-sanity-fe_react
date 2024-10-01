@@ -1,8 +1,11 @@
-// Tipe untuk konten blok (jika konten terdiri dari blok teks atau objek lain)
-type ContentBlock = {
-     type: string;
-     children: { text: string }[];
-};
+// Tipe untuk konten blok yang diharapkan oleh PortableText
+interface ContentBlock {
+     _key: string; // Tambahkan _key yang dibutuhkan oleh PortableText
+     _type: string; // Tambahkan _type yang diperlukan oleh PortableText
+     children?: { text: string }[]; // Opsional, jika ada teks
+     markDefs?: any[]; // Jika Anda ingin mendukung tanda-tanda khusus
+     style?: string; // Misalnya 'normal', 'h1', dll.
+}
 
 // Tipe untuk dimensi (contoh sederhana)
 interface Dimensions {
