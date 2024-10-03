@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { LNavbar } from "./Logo";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import "@/app/styles/blog_content.scss";
 
 type MenuItem = {
      title: string;
