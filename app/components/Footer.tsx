@@ -10,7 +10,7 @@ const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
 
 const Footer = () => {
      return (
-          <div className="footer bg-[#F7F9FC]">
+          <div className="footer bg-[#F7F9FC] dark:bg-neutral-900">
                <div className="pt-16 px4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen md:px-24 lg:px-8">
                     <div className="grid gap-10 mb-8 sm:grid-cols-2 lg:grid-cols-4 font-semibold">
                          <div className="sm:col-span-2">
@@ -18,14 +18,14 @@ const Footer = () => {
                                    <LFooter></LFooter>
                               </Link>
                               <div className="mt-6 lg:max-w-sm">
-                                   <p className="text-sm text-gray-800">Dibangun dengan penuh semangat dan kreativitas.</p>
-                                   <p className="text-sm mt-4 text-gray-800">Mari kita ciptakan kode masa depan bersama!</p>
+                                   <p className="dark:text-[#F7F9FC] text-sm text-gray-800">Dibangun dengan penuh semangat dan kreativitas.</p>
+                                   <p className="dark:text-[#F7F9FC] text-sm mt-4 text-gray-800">Mari kita ciptakan kode masa depan bersama!</p>
                               </div>
                          </div>
 
                          <div className="space-y-2 text-sm">
-                              <p className={`text-base font-bold tracking-wide text-gray-500 ${firacode6.className}`}>Kontak</p>
-                              <div className="flex text-gray-800">
+                              <p className={`dark:text-[#F7F9FC] text-base font-bold tracking-wide text-gray-500 ${firacode6.className}`}>Kontak</p>
+                              <div className="dark:text-[#F7F9FC] flex text-gray-800">
                                    <p>Whatsapp:</p>
                                    <Link
                                         href="https://wa.me/+6285600670534"
@@ -38,7 +38,7 @@ const Footer = () => {
                                    </Link>
                                    <br />
                               </div>
-                              <div className="flex text-gray-800">
+                              <div className="dark:text-[#F7F9FC] flex text-gray-800">
                                    <p>Email:</p>
                                    <Link
                                         href="mailto:wisnu.yudhanta@gmail.com"

@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
+import { DarkModeProvider } from "./components/DarkmodeContext";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -24,11 +26,13 @@ export default function RootLayout({
      return (
           <html lang="en">
                <body className={firacode.className}>
-                    <div className="fixed z-20 w-full top-0">
-                         <Navbar></Navbar>
-                    </div>
-                    {children}
-                    <Footer></Footer>
+                    <DarkModeProvider>
+                         <div className="fixed z-20 w-full top-0">
+                              <Navbar></Navbar>
+                         </div>
+                         {children}
+                         <Footer></Footer>
+                    </DarkModeProvider>
                </body>
           </html>
      );

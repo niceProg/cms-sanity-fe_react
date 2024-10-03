@@ -14,7 +14,7 @@ const Banner = () => {
      });
      return (
           <div className="w-full bg-write_banner bg-center h-96 bg-no-repeat bg-cover">
-               <div className="w-full h-96 bg-[#F7F9FC] opacity-70 z-[-1] text-gray-700">
+               <div className="w-full h-96 bg-[#F7F9FC] dark:bg-neutral-900 dark:text-[#F7F9FC] mt-7 opacity-70 z-[-1] text-gray-700">
                     <div
                          className="h-80 max-w-screen-2xl mx-auto flex flex-col
                     justify-center items-center text-4xl md:text-5xl font-extrabold text-center"
@@ -34,11 +34,11 @@ const Banner = () => {
                          >
                               <h1
                                    className={`text-3xl md:text-5xl font-semibold
-                          mt-10 uppercase tracking-widest`}
+                          mt-16 uppercase tracking-widest`}
                               >
                                    yumna<LBanner></LBanner>
                               </h1>
-                              <p className="text-xl md:text-3xl font-semibold mt-2">
+                              <p className="text-xl md:text-3xl font-semibold -mt-4">
                                    {text}
                                    <Cursor cursorBlinking cursorStyle="|" cursorColor="#4285f4"></Cursor>
                               </p>
