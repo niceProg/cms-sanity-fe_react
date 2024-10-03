@@ -11,7 +11,7 @@ import Link from "next/link";
 import "@/app/styles/blog_content.scss";
 import Darkmode from "@/app/components/Darkmode";
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export default async function ProgrammingSlugPage({ params }: { params: { slug: string } }) {
      const data = await getDataBySlug<Programming>("programming", params.slug);

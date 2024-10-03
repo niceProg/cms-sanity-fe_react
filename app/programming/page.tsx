@@ -5,7 +5,7 @@ import { getData } from "../lib/fetchcategory"; // Import getData dari fetchapi.
 import { Programming } from "../lib/interface";
 import Darkmode from "@/app/components/Darkmode";
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export default async function ProgrammingPage() {
      const data = await getData<Programming>("programming");
