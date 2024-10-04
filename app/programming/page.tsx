@@ -5,7 +5,7 @@ import { getData } from "../lib/fetchcategory"; // Import getData dari fetchapi.
 import { Programming } from "../lib/interface";
 import Darkmode from "@/app/components/Darkmode";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default async function ProgrammingPage() {
      const data = await getData<Programming>("programming");
@@ -43,7 +43,7 @@ export default async function ProgrammingPage() {
                                         <div>
                                              <div>{programming.mainImage && <Image src={programming.mainImage} alt={programming.title} width={750} height={300} className="object-cover rounded-lg"></Image>}</div>
                                              <h2 className={`dark:text-[#F7F9FC] font-bold text-lg hover:text-blue-500 transition duration-300 ease-in-out mt-6 capitalize`}>
-                                                  <span className="dark:text-[#F7F9FC] text-base font-bold">
+                                                  <span className="dark:text-gray-400 text-gray-500 text-base font-bold">
                                                        {new Date(programming._createdAt).toLocaleDateString("id-ID", {
                                                             day: "2-digit",
                                                             month: "long", // Nama bulan (contoh: Januari, Februari, dll.)
@@ -55,7 +55,7 @@ export default async function ProgrammingPage() {
                                                   {programming.title}
                                              </h2>
                                         </div>
-                                        <p className={`line-clamp-3 mt-2 text-sm`}>{programming.overview}</p>
+                                        <p className={`dark:text-[#F7F9FC] line-clamp-3 mt-2 text-sm`}>{programming.overview}</p>
                                    </Link>
                               </article>
                          </div>
