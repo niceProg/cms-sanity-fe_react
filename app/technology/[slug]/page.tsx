@@ -86,7 +86,7 @@ export default async function TechnologyPageSlug({ params }: { params: { slug: s
                                                             })}
                                                        </span>
                                                   </p>
-                                                  <p className="dark:text-[#F7F9FC] text-md hover:text-blue-500">{technology.title}</p>
+                                                  <p className="dark:text-[#F7F9FC] text-md dark:hover:text-blue-500 hover:text-blue-500">{technology.title}</p>
                                              </div>
                                         </Link>
                                    </div>

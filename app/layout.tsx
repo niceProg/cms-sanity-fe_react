@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
-import { Fira_Code } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
 
 import { DarkModeProvider } from "./components/DarkmodeContext";
@@ -8,14 +7,14 @@ import { DarkModeProvider } from "./components/DarkmodeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const firacode = Fira_Code({ subsets: ["latin"] });
+const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
      icons: {
-          icon: "/assets/logo/Tegal.dev-AA-ic.png", // Ubah path jika favicon berbeda
+          icon: "/assets/logo/Tegal.dev-AA-ic.png",
      },
      title: "Yumna Dev Blog",
-     description: "Explore insightful articles and tutorials on web development, technology, and coding tips ",
+     description: "Explore insightful articles and tutorials on web development, technology, and coding tips",
 };
 
 export default function RootLayout({
@@ -25,13 +24,13 @@ export default function RootLayout({
 }>) {
      return (
           <html lang="en">
-               <body className={firacode.className}>
+               <body className={figtree.className}>
                     <DarkModeProvider>
                          <div className="fixed z-20 w-full top-0">
-                              <Navbar></Navbar>
+                              <Navbar />
                          </div>
                          {children}
-                         <Footer></Footer>
+                         <Footer />
                     </DarkModeProvider>
                </body>
           </html>

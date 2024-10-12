@@ -3,10 +3,10 @@ import React from "react";
 import Link from "next/link";
 import { LFooter } from "./Logo";
 import Copyright from "./Copyright";
-import { Fira_Code } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "../styles/footer.scss";
 
-const firacode6 = Fira_Code({ subsets: ["latin"], weight: ["600"] });
+const figtree = Figtree({ subsets: ["latin"], weight: ["600"] });
 
 const Footer = () => {
      return (
@@ -24,7 +24,7 @@ const Footer = () => {
                          </div>
 
                          <div className="space-y-2 text-sm">
-                              <p className={`dark:text-[#F7F9FC] text-base font-bold tracking-wide text-gray-500 ${firacode6.className}`}>Kontak</p>
+                              <p className={`dark:text-[#F7F9FC] text-base font-bold tracking-wide text-gray-500 ${figtree.className}`}>Kontak</p>
                               <div className="dark:text-[#F7F9FC] flex text-gray-800">
                                    <p>Whatsapp:</p>
                                    <Link
@@ -53,9 +53,9 @@ const Footer = () => {
                               </div>
                          </div>
                          <p>
-                              <span className={`text-blue-500 ${firacode6.className}`}>Developer |</span>
-                              <span className={`text-blue-500 ${firacode6.className}`}> Community |</span>
-                              <span className={`text-blue-500 ${firacode6.className}`}> Blogger</span>
+                              <span className={`text-blue-500 ${figtree.className}`}>Developer |</span>
+                              <span className={`text-blue-500 ${figtree.className}`}> Community |</span>
+                              <span className={`text-blue-500 ${figtree.className}`}> Blogger</span>
                          </p>
                     </div>
                     <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t-2 lg:flex-row">

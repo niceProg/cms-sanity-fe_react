@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 
      return (
           <div>
-               <div className={`shadow w-full top-0 left-0 z-50 fixed transition-all duration-300 ease-in-out ${isScrolled ? "bg-white/70 dark:bg-neutral-900/70 backdrop-blur-md" : "bg-[#F7F9FC] dark:bg-neutral-900"}`}>
+               <div className={`shadow w-full top-0 left-0 z-50 fixed transition-all duration-300 ease-in-out ${isScrolled ? "bg-white/70 dark:bg-neutral-900/70 backdrop-blur-sm" : "bg-[#F7F9FC] dark:bg-neutral-900"}`}>
                     <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
                          {/* Logo */}
                          <div>
