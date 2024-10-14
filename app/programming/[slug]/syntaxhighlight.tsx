@@ -34,8 +34,8 @@ const SyntaxHighlighterComponent = ({ codeText }: { codeText: string }) => {
 
      return (
           <div className="max-w-5xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden my-4">
-               <div className="flex justify-between px-4 text-white text-xs items-center">
-                    <p className="text-sm font-semibold">{detectedLanguage}</p>
+               <div className="flex justify-end px-4 text-white text-xs items-center">
+                    {/* <p className="text-sm font-semibold">{detectedLanguage}</p> */}
                     <button
                          onClick={handleCopy}
                          className={`py-1 inline-flex items-center gap-1 transition-colors 

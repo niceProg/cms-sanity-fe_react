@@ -70,7 +70,7 @@ export default async function ProgrammingSlugPage({ params }: { params: { slug: 
                          <h1 className="font-extrabold text-3xl md:text-4xl lg:text-5xl px-4 pt-4 dark:text-[#F7F9FC]">{data?.title || "No Title Available"}</h1>
                          <p className="my-2 font-bold dark:text-[#F7F9FC]">{createdAt}</p>
 
-                         {data?.mainImage && <Image src={data.mainImage} alt="Image" width={750} height={300} className="object-cover rounded-lg border border-gray-500 mx-auto main-image" />}
+                         {data?.mainImage && <Image src={data.mainImage} alt="Image" width={750} height={300} className="object-cover rounded-lg mx-auto main-image" />}
                     </div>
                     <div className="px-0 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 leading-8 text-[#333] text-content">
                          {data?.content && <PortableText value={data.content} components={PortableTextComponent} />}
