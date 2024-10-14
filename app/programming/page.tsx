@@ -32,12 +32,11 @@ export default async function ProgrammingPage() {
                     </h1>
                </div>
                {/* CONTENT */}
-               <LoadingAnimation>
-                    {" "}
-                    {/* Wrap programming content with loading animation */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
-                         {data.map((programming) => (
-                              <div key={programming._id} className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
+                    {data.map((programming, index) => (
+                         <LoadingAnimation key={programming._id} delay={index * 100}>
+                              <div className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
                                    <article>
                                         <Link href={`/programming/${programming.slug.current}`}>
                                              <div>
@@ -59,9 +58,9 @@ export default async function ProgrammingPage() {
                                         </Link>
                                    </article>
                               </div>
-                         ))}
-                    </div>
-               </LoadingAnimation>
+                         </LoadingAnimation>
+                    ))}
+               </div>
                <Darkmode></Darkmode>
           </div>
      );

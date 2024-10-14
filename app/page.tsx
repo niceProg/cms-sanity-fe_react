@@ -20,16 +20,16 @@ export default async function Home() {
                <div>
                     <h1 className={`font-extrabold capitalize text-2xl md:text-3xl text-center text-black dark:text-[#F7F9FC] my-12`}>Postingan Pemrograman Terbaru</h1>
                </div>
-               <LoadingAnimation>
-                    {" "}
-                    {/* Wrap programming content with loading animation */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
-                         {programmingData.map((programming) => (
-                              <div key={programming._id} className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
+                    {programmingData.map((programming, index) => (
+                         <LoadingAnimation key={programming._id} delay={index * 100}>
+                              {" "}
+                              {/* Delay bertambah per item */}
+                              <div className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
                                    <article>
                                         <Link href={`/programming/${programming.slug.current}`}>
                                              <div>
-                                                  {programming.mainImage && <Image src={programming.mainImage} alt={programming.title} width={750} height={300} className="object-cover w-full h-48 rounded-lg" />}
+                                                  {programming.mainImage && <Image src={programming.mainImage} alt={programming.title} width={500} height={250} className="object-cover w-full h-48 rounded-lg" loading="lazy" />}
                                                   <h2 className="font-semibold dark:text-white text-gray-800 mt-4 hover:text-blue-500 transition duration-300 ease-in-out">
                                                        <span className="text-sm text-gray-500 dark:text-gray-400">
                                                             {new Date(programming._createdAt).toLocaleDateString("id-ID", {
@@ -47,22 +47,22 @@ export default async function Home() {
                                         </Link>
                                    </article>
                               </div>
-                         ))}
-                    </div>
-               </LoadingAnimation>
+                         </LoadingAnimation>
+                    ))}
+               </div>
                <div>
                     <h1 className={`font-extrabold capitalize text-2xl md:text-3xl text-center text-black dark:text-[#F7F9FC] my-14`}>Postingan Teknologi Terbaru</h1>
                </div>
-               <LoadingAnimation>
-                    {" "}
-                    {/* Wrap technology content with loading animation */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
-                         {technologyData.map((technology) => (
-                              <div key={technology._id} className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-4">
+                    {technologyData.map((technology, index) => (
+                         <LoadingAnimation key={technology._id} delay={index * 100}>
+                              {" "}
+                              {/* Delay bertambah per item */}
+                              <div className="dark:bg-neutral-900 bg-gray-100 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
                                    <article>
                                         <Link href={`/technology/${technology.slug.current}`}>
                                              <div>
-                                                  {technology.mainImage && <Image src={technology.mainImage} alt={technology.title} width={750} height={300} className="object-cover w-full h-48 rounded-lg" />}
+                                                  {technology.mainImage && <Image src={technology.mainImage} alt={technology.title} width={500} height={250} className="object-cover w-full h-48 rounded-lg" loading="lazy" />}
                                                   <h2 className="font-semibold dark:text-white text-gray-800 mt-4 hover:text-blue-500 transition duration-300 ease-in-out">
                                                        <span className="text-sm text-gray-500 dark:text-gray-400">
                                                             {new Date(technology._createdAt).toLocaleDateString("id-ID", {
@@ -80,9 +80,9 @@ export default async function Home() {
                                         </Link>
                                    </article>
                               </div>
-                         ))}
-                    </div>
-               </LoadingAnimation>
+                         </LoadingAnimation>
+                    ))}
+               </div>
                <Darkmode />
           </div>
      );

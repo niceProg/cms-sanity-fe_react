@@ -3,7 +3,12 @@
 import { useEffect } from "react";
 import "aos/dist/aos.css"; // Ensure AOS CSS is imported
 
-const LoadingAnimation: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+interface LoadingAnimationProps {
+     children: React.ReactNode;
+     delay?: number; // Optional delay prop
+}
+
+const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ children, delay = 0 }) => {
      useEffect(() => {
           const AOS = require("aos");
           AOS.init({
@@ -14,7 +19,9 @@ const LoadingAnimation: React.FC<{ children: React.ReactNode }> = ({ children })
      }, []);
 
      return (
-          <div data-aos="fade-up" className="py-4">
+          <div data-aos="fade-up" data-aos-delay={delay} className="py-4">
+               {" "}
+               {/* Apply delay dynamically */}
                {children}
           </div>
      );

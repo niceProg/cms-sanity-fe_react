@@ -26,7 +26,7 @@ const Footer = () => {
                          <div className="space-y-2 text-sm">
                               <p className={`dark:text-[#F7F9FC] text-base font-bold tracking-wide text-gray-500 ${figtree.className}`}>Kontak</p>
                               <div className="dark:text-[#F7F9FC] flex text-gray-800">
-                                   <p>Whatsapp:</p>
+                                   <p>Whatsapp:&nbsp;</p>
                                    <Link
                                         href="https://wa.me/+6285600670534"
                                         aria-label="My phone number"
@@ -39,7 +39,7 @@ const Footer = () => {
                                    <br />
                               </div>
                               <div className="dark:text-[#F7F9FC] flex text-gray-800">
-                                   <p>Email:</p>
+                                   <p>Email:&nbsp;</p>
                                    <Link
                                         href="mailto:wisnu.yudhanta@gmail.com"
                                         aria-label="My email"
@@ -53,9 +53,39 @@ const Footer = () => {
                               </div>
                          </div>
                          <p>
-                              <span className={`text-blue-500 ${figtree.className}`}>Developer |</span>
-                              <span className={`text-blue-500 ${figtree.className}`}> Community |</span>
-                              <span className={`text-blue-500 ${figtree.className}`}> Blogger</span>
+                              <span className="dark:text-[#F7F9FC] text-gray-800">
+                                   <Link
+                                        href="https://github.com/niceProg"
+                                        aria-label="github"
+                                        title="Github"
+                                        className="transition-colors duration-300 text-secondary 
+                                   hover:text-blue-500"
+                                   >
+                                        &nbsp;Github&nbsp;|
+                                   </Link>
+                              </span>
+                              <span className="dark:text-[#F7F9FC] text-gray-800">
+                                   <Link
+                                        href="https://me.tegal.dev/?yumna"
+                                        aria-label="community"
+                                        title="Community"
+                                        className="transition-colors duration-300 text-secondary 
+                                   hover:text-blue-500"
+                                   >
+                                        &nbsp;Community&nbsp;|
+                                   </Link>
+                              </span>
+                              <span className="dark:text-[#F7F9FC] text-gray-800">
+                                   <Link
+                                        href="https://blog-yumna-dev.vercel.app"
+                                        aria-label="blogger"
+                                        title="Blog"
+                                        className="transition-colors duration-300 text-secondary 
+                                   hover:text-blue-500"
+                                   >
+                                        &nbsp;Blogger
+                                   </Link>
+                              </span>
                          </p>
                     </div>
                     <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t-2 lg:flex-row">
